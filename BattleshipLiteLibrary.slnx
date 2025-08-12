@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BattleshipLite/BattleshipLite.csproj" />
+  <Project Path="BattleshipLiteLibrary/BattleshipLiteLibrary.csproj" />
+</Solution>
