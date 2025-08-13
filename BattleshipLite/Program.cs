@@ -127,11 +127,15 @@ void DisplayShotGrid(PlayerInfoModel activePlayer)
         }
         else if (girdSpot.Status == Enums.GridSpotStatus.Hit)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(" X  ");
+            Console.ResetColor();
         }
         else if (girdSpot.Status == Enums.GridSpotStatus.Miss)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(" O  ");
+            Console.ResetColor();
         }
         else
         {
