@@ -21,7 +21,12 @@ Battleship Lite is a two-player turn-based strategy game where players place shi
 ```
 BattleshipLiteLibrary/
 ├── BattleshipLite/                 # Console application
-│   └── Program.cs                  # Main game loop and UI logic
+│   ├── Program.cs                  # Main entry point and game orchestration
+│   └── Services/                   # UI and game flow services
+│       ├── GameDisplayService.cs   # Display and visual output
+│       ├── GameFlowService.cs      # Game turn management
+│       ├── PlayerSetupService.cs   # Player creation and setup
+│       └── UserInputService.cs     # User input handling
 ├── BattleshipLiteLibrary/          # Game logic library
 │   ├── Logic/
 │   │   └── GameLogic.cs           # Core game mechanics
@@ -81,17 +86,25 @@ BattleshipLiteLibrary/
 
 ### Clean Separation of Concerns
 
-- **BattleshipLite** - Console UI and user interaction
+- **BattleshipLite** - Console UI and user interaction orchestration
+  - **Services** - Organized service layer for different UI concerns
 - **BattleshipLiteLibrary** - Pure game logic and data models
-- **Models** - Data structures for game state
-- **Logic** - Game rules and mechanics
+  - **Models** - Data structures for game state
+  - **Logic** - Game rules and mechanics
 
 ### Key Classes
 
+**Core Game Logic:**
 - `GameLogic` - Core game mechanics and validation
 - `GridSpotModel` - Represents individual grid positions
 - `PlayerInfoModel` - Stores player data and game state
 - `Enums` - Grid spot status definitions
+
+**Service Layer:**
+- `GameDisplayService` - Handles all visual output and screen management
+- `UserInputService` - Manages user input collection and validation
+- `PlayerSetupService` - Orchestrates player creation and ship placement
+- `GameFlowService` - Controls turn-based game flow and shot processing
 
 ## Planned Improvements
 
